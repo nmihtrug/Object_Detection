@@ -1,0 +1,9 @@
+model/
+
+data/
+
+pred/
+
+.venv/
+
+__pycache__/
