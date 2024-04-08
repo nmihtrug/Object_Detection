@@ -1,0 +1,4 @@
+libgtk2.0-dev
+freeglut3-dev
+libgl1-mesa-glx
+ffmpeg
