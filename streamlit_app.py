@@ -51,7 +51,7 @@ def main():
     st.set_page_config(layout="wide")
     st.title("Object Detection")
 
-    config, prediction = st.columns([2, 3], gap='large')
+    config, prediction = st.columns([4, 5], gap='large')
 
     with config:
         file_upload, model_choosens = config_container()

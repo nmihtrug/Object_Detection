@@ -1,9 +1,6 @@
 model/
-
 data/
-
 pred/
-
 .venv/
-
 __pycache__/
+*.jpg
