@@ -8,7 +8,7 @@ from glob import glob
 
 def config_container():
     model_choosens = st.multiselect(
-        "Choose a model", ["yolov8n", "yolov8m", "yolov8l", "yolov8x"]
+        "Choose a model", ["yolov8s_text_detection_best.pt", "yolov8n_text_detection_best.pt", "yolov8m_text_detection_best.pt"]
     )
     file_upload = st.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
 
@@ -24,7 +24,7 @@ def prediction_container(model_choosens, file_upload):
     if file_upload is not None:
         st.write("Detecting...")
         for model_choosen in model_choosens:
-            model = YOLO(f"model/{model_choosen}.pt")
+            model = YOLO(f"models/{model_choosen}")
 
             temp_dir = tempfile.TemporaryDirectory()
 
@@ -51,9 +51,9 @@ def prediction_container(model_choosens, file_upload):
 
 def main():
     st.set_page_config(layout="wide")
-    st.title("Object Detection")
+    st.title("Text Detection")
 
-    config, prediction = st.columns([4, 5], gap="large")
+    config, prediction = st.columns([5, 4], gap="large")
 
     with config:
         file_upload, model_choosens = config_container()
